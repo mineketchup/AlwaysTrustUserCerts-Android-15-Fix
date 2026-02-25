@@ -1,6 +1,6 @@
 # Personally modified for Android 15
 ## How to use
-- install this module from Releases
+- install this module from [Releases](https://github.com/mineketchup/AlwaysTrustUserCerts-Android-15-Fix/releases)
 - install [MoveCertificate](https://github.com/ys1231/MoveCertificate)
 - install your user certificate from Settings>Security>Certificate of your Phone
 - Reboot and check if it's working
