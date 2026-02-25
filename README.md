@@ -5,6 +5,10 @@
 - install your user certificate from Settings>Security>Certificate of your Phone
 - Reboot and check if it's working
 
+## 502 Certificate verify failed
+In case you run softwares like mitmproxy on-device but your browser shows `502 Bad Gateway Certificate verify failed: unable to get local issuer certificate` run the next command on Termux to fix it:
+- `cat [PATHtoCERTIFICATEpemFILE] >> cat $(python -m certifi)`
+
 ## Why this fork
 Personally the original module was not working for me: 
 - certificates are mounted on APEX's /cacert directory when checked from Termux but not when checking with a Root File Explorer
