@@ -33,5 +33,9 @@ main(){
 
     log "Grabbing /system certs"
     cp $SYS_CERT_DIR/* $MODDIR$SYS_CERT_DIR
+
+#FIX SELINUX CONTENTS
+    chcon u:object_r:system_security_cacerts_file:s0 $SYS_CERT_DIR/*
+    chcon u:object_r:system_security_cacerts_file:s0 $MODDIR$SYS_CERT_DIR/*
 }
 main
