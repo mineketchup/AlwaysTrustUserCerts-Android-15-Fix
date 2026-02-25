@@ -1,5 +1,9 @@
 # Personally modified for Android 15
 ## How to use
+- install this module from Releases
+- install [MoveCertificate](https://github.com/ys1231/MoveCertificate)
+- install your user certificate from Settings>Security>Certificate of your Phone
+- Reboot and check if it's working
 
 ## Why this fork
 Personally the original module was not working for me: 
