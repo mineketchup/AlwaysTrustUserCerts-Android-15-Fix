@@ -1,3 +1,17 @@
+# Personally modified for Android 15
+## How to use
+
+## Why this fork
+Personally the original module was not working for me: 
+- certificates are mounted on APEX's /cacert directory when checked from Termux but not when checking with a Root File Explorer
+- fix for the above issue was solved by using [MoveCertificate](https://github.com/ys1231/MoveCertificate)
+- but now, user certificate are not available on /system/etc/security/cacert/
+- so I thought modifying the script of this module just to use the part for /system/etc/security/cacert was the best thing
+
+Below is the original text from the repo:
+
+---
+
 # Always Trust User Certs
 
 This module makes all installed user certificates part of the system certificate store, so that they will automatically be used when building the trust chain. This module makes it unnecessary to add the network_security_config property to an application's manifest.
