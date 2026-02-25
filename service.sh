@@ -46,13 +46,13 @@ monitor_zygote(){
                 fi
 
                 log "Injecting into zygote ($zp)"
-                /system/bin/nsenter --mount=/proc/$zp/ns/mnt -- /bin/mount --rbind $SYS_CERT_DIR $APEX_CERT_DIR
+                /system/bin/nsenter --mount=/proc/$zp/ns/mnt -- /bin/mount --rbind $SYS_CERT_DIR
 
 
                 for pid in $children; do
                     if ! has_mount "$pid"; then
                         log "  Injecting into child $pid"
-                        /system/bin/nsenter --mount=/proc/$pid/ns/mnt -- /bin/mount --rbind $SYS_CERT_DIR $APEX_CERT_DIR
+                        /system/bin/nsenter --mount=/proc/$pid/ns/mnt -- /bin/mount --rbind $SYS_CERT_DIR
                     fi
                 done
             fi
@@ -72,15 +72,7 @@ main(){
 
     # In conscrypt mode, copy conscrypt certs and inject into zygote
     if [ -d "/apex/com.android.conscrypt/cacerts/" ]; then
-
-        log "Grabbing apex certs"
-        cp $APEX_CERT_DIR/* $MODDIR$SYS_CERT_DIR
-        mount -t tmpfs tmpfs $SYS_CERT_DIR
-        cp $MODDIR$SYS_CERT_DIR/* $SYS_CERT_DIR/
-
-        # Fix permissions
- 	    chown root:root $SYS_CERT_DIR/*
-        chmod 644 $SYS_CERT_DIR/*
+	
         chcon u:object_r:system_security_cacerts_file:s0 $SYS_CERT_DIR/*
 
         monitor_zygote
