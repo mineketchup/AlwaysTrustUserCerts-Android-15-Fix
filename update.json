@@ -1,7 +1,6 @@
 {
     "version": "v1.3",
     "versionCode": 45,
-    "zipUrl": "https://github.com/NVISOsecurity/AlwaysTrustUserCerts/releases/download/v1.3/AlwaysTrustUserCerts_v1.3.zip",
-    "changelog": "https://raw.githubusercontent.com/NVISOsecurity/AlwaysTrustUserCerts/master/CHANGELOG.md"
+    "zipUrl": "https://github.com/mineketchup/AlwaysTrustUserCerts-Android-15-Fix/releases/download/v1.3/AlwaysTrustUserCerts_v1.3-ONLYSYSTEM.zip",
+    "changelog": "https://raw.githubusercontent.com/mineketchup/AlwaysTrustUserCerts-Android-15-Fix/master/CHANGELOG.md"
 }
-
